@@ -1,0 +1,110 @@
+html{
+	font-size: 62.5%;
+}
+
+body{
+	color: $ram-white;
+	line-height: 1.5;
+	font-family: "Ubuntu", sans-serif;
+	font-size: 1.8rem;
+
+	a{
+		text-decoration: none;
+	}
+}
+
+body > header{
+
+	#main-nav{
+		font-size: 1.8rem;
+
+		li.ancestor > a{
+			font-weight: bold;
+		}
+
+		.site-title{
+			font-size: 1.8rem;
+			font-weight: bold;
+		}
+	}
+
+		.site-title .division{
+		}
+
+	.section-title{
+		font-size: 2.1rem;
+		font-weight: bold;
+	}
+
+	a{
+		color: $ram-white;
+		text-decoration: none;
+	}
+
+	ul.menu li.active > a{
+		font-weight: bold;
+	}
+
+	nav,
+	nav a{
+	}
+
+	nav.section,
+	nav.section a{
+		color: white;
+	}
+
+	ul.secondary a{
+		color: black;
+	}
+}
+
+
+main{
+	h1,
+	h2,
+	h3,
+	h4,
+	h5{
+		font-family: 'Rubik', 'Ubuntu', 'Helvetica Neue', 'Helvetica', sans-serif;
+	}
+
+	h1{
+		text-align: center;
+		text-decoration: none;
+		font-size: 4.5rem;
+	}
+
+	h2{
+		margin-bottom: 0;
+		font-size: 3.2rem;
+	}
+
+	a{
+		color: $primary-color;
+		transition: 250ms color ease;
+		font-weight: bold;
+
+		&:hover{
+			color: mix(white, $primary-color, 16%);
+		}
+	}
+
+	.content a{
+		color: $tertiary-color;
+		font-weight: bold;
+	}
+
+	a.continue{
+		font-weight: bold;
+	}
+
+	a.comment{
+		font-weight: bold;
+	}
+}
+
+body > footer{
+	color: white;
+	font-size: 1.5rem;
+}

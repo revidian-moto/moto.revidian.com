@@ -1,0 +1,22 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+<div class="cat-header">
+	<h2>Latest Posts</h2>
+	<span>Read our most recent articles</span><hr>
+</div>
+{{ if .Content }}<div class="content">{{ .Content }}</div>{{ end }}
+<div class="articles">
+{{ range where (.Paginate .Pages.ByDate.Reverse).Pages "Type" "blog" }}
+	<article id="{{ .File.UniqueID }}" class="card">
+		{{ $imgPath := "" }}
+		{{ with .Params.feature }}{{ $imgPath = (printf "img/feature/%s" .) }}{{ else }}{{ $imgPath = "img/feature/brand-design-1.png" }}{{ end }}
+		{{ $origImg := resources.Get $imgPath }}
+		{{ $newImg := $origImg.Resize "480x" }}
+		<a href="{{ .RelPermalink }}"><img src="{{ $newImg.RelPermalink }}" width="{{ $newImg.Width }}" height="{{ $newImg.Height }}" class="feature"></a>
+		<h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+		<div class="meta"><time datetime="{{ .Date }}">{{ .Date.Format "January 2, 2006" }}</time></div>
+	</article>
+{{ end }}
+</div>
+{{ partial "pager" . }}
+{{ end }}

@@ -1,0 +1,31 @@
+cardo:
+  edge:
+    price: "$389.95"
+    app: true
+    battery-life: "13hr"
+    bluetooth: 5.2
+    fm: true
+    max-riders: 15
+    mesh: true
+    ota: true
+    range-unit: "1.6km"
+    range-overall: "8km"
+    speakers:
+      size: "40mm"
+      brand: "JBL"
+    warranty: "3y"
+  bold:
+    price: "$339.95"
+    app: true
+    battery-life: "13hr"
+    bluetooth: 4.1
+    fm: true
+    max-riders: 15
+    mesh: true
+    ota: false
+    range-unit: "1.6km"
+    range-overall: "8km"
+    speakers:
+      size: "40mm"
+      brand: "JBL"
+    warranty: "2y"

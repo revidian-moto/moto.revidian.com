@@ -1,0 +1,59 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: ram
+  name: moto-website-preview
+  labels:
+    app: moto-website-preview
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: moto-website-preview
+  template:
+    metadata:
+      labels:
+        app: moto-website-preview
+    spec:
+      containers:
+      - name: site
+        image: "ghcr.io/revidian-moto/moto.revidian.com:latest"
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: ram
+  name: moto-website-preview
+  labels:
+    app: moto-website-preview
+spec:
+  type: ClusterIP
+  selector:
+    app: moto-website-preview
+  ports:
+    - protocol: TCP
+      name: http
+      port: 80
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  namespace: ram
+  name: moto-website-preview
+  labels:
+    app: moto-website-preview
+spec:
+  ingressClassName: caddy
+  rules:
+  - host: preview.moto.revidian.com
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: moto-website-preview
+            port:
+              number: 80

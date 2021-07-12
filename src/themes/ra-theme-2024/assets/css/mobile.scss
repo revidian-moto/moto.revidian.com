@@ -1,0 +1,241 @@
+@import "colors";
+
+/* Rules without a media query present take affect when the webpage is 1,200px 
+ * or less. */
+main.list,
+main.single{
+}
+
+
+/************************************************
+ * <= 1050px width
+ * *********************************************/
+@media(max-width: 1050px){
+}
+
+
+/************************************************
+ * <= 800px width
+ * *********************************************/
+@media(max-width: 800px){
+
+	#main-nav .site-title{
+		display: none;
+	}
+
+	#section-nav{
+		border-radius: 0;
+		width: 100%;
+
+		.site-logo{
+			border-radius: 0;
+		}
+	}
+}
+
+
+/************************************************
+ * <= 650px width
+ * *********************************************/
+@media(max-width: 650px){
+
+	header{
+		min-height: 60px;
+	}
+
+	#main-nav{
+		display: none;
+	}
+
+	#section-nav{
+		margin: 0;
+
+		ul{
+			display: none;
+		}
+	}
+
+	a.toggle{
+		position: absolute;
+		top: 14px;
+		right: 0;
+		display: block !important;
+		width: 66px;
+		text-align: center;
+		font-size: 2.2rem;
+		z-index: 100;
+	}
+
+	#main-nav{
+		position: absolute;
+		top: 62px;
+		bottom: 0;
+		left: 0;
+		border-left: 1px solid $ram-red;
+		background-color: $ram-black;
+		padding: 0;
+		width: 100%;
+		min-width: 290px;
+		height: 100%;
+		z-index: 100;
+
+		ul{
+			flex-direction: column;
+
+			li.ancestor{
+				background-color: #2b2c2d;
+			}
+		}
+	}
+
+	#section-nav ul{
+		position: absolute;
+		top: 62px;
+		right: 0;
+		bottom: 0;
+		flex-direction: column;
+		background-color: #2b2c2d;
+		width: 50%;
+		min-width: 150px;
+		height: 100%;
+		z-index: 105;
+	}
+
+
+
+
+
+
+
+	body > header{
+
+		
+		ul.main{
+			display: none;
+			flex-direction: column;
+			position: absolute;
+			top: 100%;
+			right: 0%;
+			border-top: 2px solid #ffffff;
+			background-color: #2b2c2d;
+			width: 220px;
+			height: auto;
+
+			li{
+				text-align: center;
+
+				&.active{
+					border-left: 4px solid $ra-blue;
+					border-bottom: none !important;
+				}
+				&.active::after{
+					display: none;
+				}
+
+				&.parent{
+					padding-left: 0;
+				}
+			}
+
+			ul.sub.menu{
+				position: relative;
+				border-left: none;
+				border-right: none;
+
+				li{
+					text-align: right;
+				}
+			}
+		}
+	}
+
+	footer span.normal{
+		display: none;
+	}
+
+	body>footer span.small{
+		display: inline;
+	}
+}
+
+
+/************************************************
+ * <= 600px width
+ * *********************************************/
+@media(max-width: 600px){
+
+	main.list,
+	main.single{
+
+		h1{
+			font-size: 3.5rem;
+		}
+
+		h2{
+			font-size: 2.5rem;
+		}
+
+		.alignleft,
+		.aligncenter,
+		.alignright{
+			display: block;
+			margin: 0 auto;
+			float: none;
+		}
+	}
+
+	form{
+		width: 85%;
+	}
+
+	body > footer{
+
+		padding: 5px 12px;
+		span{
+			text-align: center;
+		}
+	}
+}
+
+
+/************************************************
+ * <= 550px width
+ * *********************************************/
+@media(max-width: 550px){
+}
+
+
+/************************************************
+ * <= 450px width
+ * *********************************************/
+@media(max-width: 450px){
+
+	main.list,
+	main.single{
+		h1{
+			font-size: 3.2rem;
+		}
+
+		h2{
+			font-size: 2.5rem;
+		}
+	}
+
+	body > footer{
+	
+		span.normal{
+			display: none;
+		}
+
+		span.small{
+			display: inline-block;
+			padding-top: 0;
+			text-align: center;
+			line-height: 60px;
+		}
+	}
+
+	body > header nav .section-image img{
+		height: 10px;
+	}
+}

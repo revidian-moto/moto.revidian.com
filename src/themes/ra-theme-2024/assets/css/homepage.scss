@@ -1,0 +1,62 @@
+@import "colors";
+
+body.home main{
+	text-align: center;
+}
+
+#intro{
+	margin-top: 10%;
+
+	h1{
+		margin: 0;
+		font-size: 5.6rem;
+	}
+
+	p{
+		margin-top: 0;
+		font-size: 3.0rem;
+	}
+}
+
+#benefits{
+	display: flex;
+	margin: 14% auto 0;
+	width: 65%;
+
+	div{
+		padding: 0 5px;
+		width: 33%;
+	}
+
+	h2{
+		color: #444444;
+		font-size: 1.8rem;
+
+		i{
+			margin-right: 20px;
+		}
+	}
+
+	p{
+		padding-top: 10px;
+	}
+}
+
+
+
+/************************************************
+ * <= 1000px width
+ * *********************************************/
+@media(max-width: 1000px){
+}
+
+
+/************************************************
+ * <= 800px width
+ * *********************************************/
+@media(max-width: 800px){
+
+	main{
+		padding: 0 5%;
+	}
+}

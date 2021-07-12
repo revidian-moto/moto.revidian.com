@@ -1,0 +1,69 @@
+baseurl: "https://moto.revidian.com/"
+title: "Revidian Moto"
+theme: ra-theme-2024
+
+googleAnalytics: "G-JNW0YHHPMM"
+
+enableEmoji: true
+
+params:
+  description: "A brand for motorcycle enthusiasts with a flair for tech and engineering."
+  tagline: "A brand for motorcycle enthusiasts with a flair for tech and engineering."
+  mailchimpURL: ""
+  social:
+    mastodon: "https://nanobyte.cafe/@RevidianMoto"
+    facebook: "RevidianAuto"
+    linkedin: "RevidianMoto"
+    github: "revidian-moto"
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+menus:
+  main-left:
+  - name: "Blog"
+    pageRef: "/blog"
+    weight: 5
+  #- name: "Events"
+  #  url: "/events/"
+  #  weight: 7
+  #- name: "R// Garage"
+  #  url: "/garage/"
+  #  weight: 10
+  main-right:
+  - name: "Newsletter"
+    pageRef: "/newsletter"
+    weight: 20
+  - name: "Contact Us"
+    pageRef: "/contact"
+    weight: 25
+  garage:
+    - name: "Home"
+      url: "/garage/"
+      weight: -1
+    - name: "Features"
+      url: "/garage/features"
+      weight: 10
+    - name: "Pricing"
+      url: "/garage/pricing/"
+      weight: 15
+  blog:
+    - name: "Latest Posts"
+      pageRef: "/blog/"
+      weight: -1
+    - name: "Submit News"
+      pageRef: "/blog/submit-news"
+      weight: 5
+  social:
+  - identifier: "mastodon"
+    url: "https://nanobyte.cafe/@RevidianMoto"
+    pre: '<i class="fab fa-mastodon"></i>'
+    params:
+      rel: me
+    weight: 10
+  - identifier: "github"
+    url: "https://github.com/revidian-moto"
+    pre: '<i class="fab fa-github"></i>'
+    weight: 20

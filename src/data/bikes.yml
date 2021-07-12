@@ -1,0 +1,96 @@
+- name: "2022 Nightster"
+  capacity: 3.1
+  mpg: 52.4
+- name: "2022 Sportser S"
+  capacity: 3.1
+  mpg: 49
+- name: "2022 Iron 883"
+  capacity: 3.3
+  mpg: 51
+- name: "2022 Forty-Eight"
+  capacity: 2.1
+  mpg: 48
+- name: "2022 Software Standard"
+  capacity: 3.5
+  mpg: 47
+- name: "2022 Street Bob 114"
+  capacity: 3.5
+  mpg: 47
+- name: "2022 Fat Bob 114"
+  capacity: 3.5
+  mpg:  47
+- name: "2022 Low Rider S"
+  capacity: 5.0
+  mpg: 47
+- name: "2022 Low Rider ST"
+  capacity: 5.0
+  mpg: 47
+- name: "2022 Fat Boy 114"
+  capacity: 5.0
+  mpg: 47
+- name: "2022 Heritage Classic"
+  capacity: 5.0
+  mpg: 47.0
+- name: "2022 Pan America 1250"
+  capacity: 5.6
+  mpg: 46.0
+- name: "2022 Pan America 1250 Special"
+  capacity: 5.6
+  mpg: 46.0
+- name: "2022 Pan America 1250 Special G.I."
+  capacity: 5.6
+  mpg: 46.0
+- name: "2022 Electra Glide Standard"
+  capacity: 6.0
+  mpg: 43.0
+- name: "2022 Road King"
+  capacity: 6.0
+  mpg: 43.0
+- name: "2022 Road Glide"
+  capacity: 6.0
+  mpg: 43.0
+- name: "2022 Street Glide"
+  capacity: 6.0
+  mpg: 43.0
+- name: "2022 Road King Special"
+  capacity: 6.0
+  mpg: 43.0
+- name: "2022 Road Glide Special"
+  capacity: 6.0
+  mpg: 43.0
+- name: "2022 Street Glide Special"
+  capacity: 6.0
+  mpg: 43.0
+- name: "2022 Road Glide Limited"
+  capacity: 6.0
+  mpg: 43.0
+- name: "2022 Ultra Limited"
+  capacity: 6.0
+  mpg: 43.0
+- name: "2022 Road Glide ST"
+  capacity: 6.0
+  mpg: 41.0
+- name: "2022 Street Glide ST"
+  capacity: 6.0
+  mpg: 41.0
+- name: "2022 CVO Street Glide"
+  capacity: 6.0
+  mpg: 41.0
+- name: "2022 CVO Road Glide"
+  capacity: 6.0
+  mpg: 41.0
+- name: "2022 CVO Road Glide Limited"
+  capacity: 6.0
+  mpg: 41.0
+- name: "2022 Freewheeler"
+  capacity: 6.0
+  mpg: 43.0
+- name: "2022 Tri Glide Ultra"
+  capacity: 6.0
+  mpg: 42.0
+- name: "2022 Tri Glide Ultra G.I."
+  capacity: 6.0
+  mpg: 42.0
+- name: "2022 CVO Tri Glide"
+  capacity: 6.0
+  mpg: 40.0

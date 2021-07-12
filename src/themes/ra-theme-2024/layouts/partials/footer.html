@@ -1,0 +1,6 @@
+<footer>
+	<span class="normal">© {{ now.Format "2006" }} Revidian Enterprises</span>
+	<span class="small">© Revidian</span>
+	<span class="site-title">{{ .Site.Title }}</span>
+		{{ partial "menu.html" (dict "menuID" "social" "dir" "h" "page" .) }}
+</footer>

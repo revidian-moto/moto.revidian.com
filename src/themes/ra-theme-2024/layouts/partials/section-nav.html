@@ -1,0 +1,21 @@
+{{ $currentPage := . }}
+{{- $urlPart1 := print "/" (index (split .Permalink "/") 3) "/" -}}
+<nav id="sidebar-nav">
+	<ul class="menu v section-{{ .Section }}">
+	{{ range (index .Site.Menus .Section).ByWeight }}
+		<li class="{{ if or ($currentPage.IsMenuCurrent ".Section" .) (eq ($urlPart1 | lower) (.URL | lower)) ($currentPage.HasMenuCurrent ".Section" .) }}active{{end}}">
+		{{ if .HasChildren }}
+			<ul class="{{ .Identifier }} {{if $currentPage.HasMenuCurrent ".Section" . }} db{{ else }} dn{{ end }}">
+			{{- range .Children }}
+				<li class="{{if $currentPage.IsMenuCurrent ".Section" . }}active {{ else }}black {{end}}">
+					<a href="{{.URL}}">{{ .Name }}</a>
+				</li>
+			{{- end}}
+			</ul>
+		{{ else }}
+			<a href="{{ .URL }}">{{ .Name }}</a>
+        {{- end}}
+		</li>
+	{{ end }}
+	</ul>
+</nav>

@@ -1,0 +1,32 @@
+{{ define "main" }}
+<article>
+	<h1>{{ .Title }}</h1>
+	<div class="content">{{ .Content }}</div>
+	<hr />
+	<h2>Upcoming Events</h2>
+	{{ $years := slice }}
+	{{ range .Site.Data.events }}
+		{{ $years = $years | append (substr .start 0 4) }}
+	{{ end }}
+	{{ $years = uniq $years | sort }}
+	{{ range $years }}
+		<div class="card-grid">
+		{{ $year := . }}
+		<h3>{{ $year }}</h3>
+		{{ range sort $.Site.Data.events  "start" }}
+			{{ if ne (time.Format "2006" .start) $year }}
+				{{/* do nothing, we don't have 'continue' yet */}}
+			{{ else }}
+			<div class="card">
+				<h3>{{ .name }}</h3>
+				<span>{{ time.Format "January 2" .start }}</span>
+				{{ if ne .start .end }} - <span>{{ time.Format "January 2" .end }}</span>{{ end }}
+				<br />
+				<a href="{{ .link }}">website</a>
+			</div>
+			{{ end }}
+		{{ end }}
+		</div>
+	{{ end }}
+</article>
+{{ end }}

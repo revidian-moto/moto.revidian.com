@@ -1,0 +1,21 @@
+{{ define "main" }}
+<article id="{{ .File.UniqueID }}" class="full">
+	{{ $imgPath := "" }}
+	{{ with .Params.feature }}{{ $imgPath = (printf "img/feature/%s" .) }}{{ else }}{{ $imgPath = "img/feature/brand-design-1.png" }}{{ end }}
+	{{ $origImg := resources.Get $imgPath }}
+	{{ $newImg := $origImg.Fill "1000x500" }}
+	<img class="feature{{ if .Params.featureClass }} {{ .Params.featureClass }}{{ end }}" src="{{ $newImg.RelPermalink }}">
+	<header>
+		<h1>{{ .Title }}</h1>
+		<div class="meta">
+			<span>By {{ (index .Site.Data.people .Params.author).name }}</span>
+			<span>·</span>
+			<time datetime="{{ .Date }}">{{ .Date.Format "Posted January 2, 2006" }}</time>
+		</div>
+	{{ if and (.Params.feature) (ne .Params.featureHide true) }}
+	{{ end }}
+	</header>
+	<div class="content">{{ .Content }}</div>
+</article>
+{{ partial "share-buttons" . }}
+{{ end }}

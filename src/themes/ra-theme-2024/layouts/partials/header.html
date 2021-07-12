@@ -1,0 +1,24 @@
+{{- $currentPage := . -}}
+<header>
+	<nav id="main-nav">
+		{{ partial "menu.html" (dict "menuID" "main-left" "dir" "h" "page" .) }}
+		<h1 class="site-title"><a href="/">Revidian Moto</a></h1>
+		{{ partial "menu.html" (dict "menuID" "main-right" "dir" "h" "page" .) }}
+	</nav>
+	{{ if .Section }}
+	<nav id="section-nav">
+		<span class="site-logo"><a href="{{ .Site.BaseURL  }}"><img src="/assets/img/logos/rm-logo-dark.svg" /></a></span>
+		<a class="section-image" href="/{{ .Section }}/">
+		{{ $subLogoURL := printf "/static/assets/img/%s-logo.svg" .Section }}
+		{{ if (fileExists $subLogoURL) }}
+			<img src="/assets/img/{{ .Section }}-logo.svg" />
+		{{ else }}
+			<h2 class="section-title">{{ .Section | title }}</h2>
+		{{ end }}
+		</a>
+		{{ partial "menu.html" (dict "menuID" .Section "dir" "h" "page" .) }}
+	</ul>
+	</nav>
+	{{ end }}
+	<a class="toggle" onclick="toggleMainNav();"><span class="fa fa-bars"></span></a>
+</header>

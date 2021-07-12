@@ -1,0 +1,40 @@
+- name: "Adventure Rally & Camp"
+  start: 2022-11-03
+  end: 2022-11-05
+  location: "Julian, CA"
+  link: "https://www.advrally.com/"
+- name: "Bikes, Blues And BBQ"
+  start: 2022-10-05
+  end: 2022-10-08
+  location: "Rogers, AR"
+  link: "https://bikesbluesandbbq.org/"
+- name: "Harley-Davidson Homecoming"
+  start: 2023-07-13
+  end: 2023-07-16
+  location: "Milwaukee, WI"
+  link: "https://www.harley-davidson.com/us/en/content/event-calendar/homecoming.html"
+- name: "Barber Vintage Festival"
+  start: 2022-10-07
+  end: 2022-10-09
+  location: "Birmingham, AL"
+  link: "https://www.barbermuseum.org/barber-vintage-festival/"
+- name: "Barber Vintage Festival"
+  start: 2022-10-19
+  end: 2022-10-23
+  location: "Panama City Beach, FL"
+  link: "https://thunderbeachproductions.com/home/"
+- name: "Blockhead Garage Grand Opening"
+  start: 2022-10-15
+  end: 2022-10-15
+  location: "Debary, FL"
+  link: "https://www.barbermuseum.org/barber-vintage-festival/"
+- name: "Ace Cafe Bike Night"
+  start: 2022-10-06
+  end: 2022-10-06
+  location: "Orlando, FL"
+  link: "https://www.acecafeusa.com/meets-events"
+- name: "Ace Cafe Bike Night"
+  start: 2022-10-20
+  end: 2022-10-20
+  location: "Orlando, FL"
+  link: "https://www.acecafeusa.com/meets-events"
