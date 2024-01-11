@@ -37,6 +37,7 @@ workflows:
           version: *sb-ver
           source: "src"
           html-proofer: false
+          strawberry-extra-flags: "-b https://preview.moto.revidian.com/"
           filters:
             branches:
               only: trunk
