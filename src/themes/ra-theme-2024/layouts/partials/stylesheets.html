@@ -1,4 +1,5 @@
-<link rel="stylesheet" href="{{ "vendor/sanitize-13.0/sanitize.css" | relURL }}">
+{{- $style := resources.Get "vendor/sanitize-13.0/sanitize.css" | minify -}}
+	<link rel="stylesheet" href="{{ $style.RelPermalink }}">
 	<link rel="stylesheet" href="{{ "vendor/font-awesome-6.4/css/fontawesome.min.css" | relURL }}">
 	<link rel="stylesheet" href="{{ "vendor/font-awesome-6.4/css/brands.min.css" | relURL }}">
 	<link rel="stylesheet" href="{{ "vendor/font-awesome-6.4/css/solid.min.css" | relURL }}">
@@ -11,7 +12,7 @@
 	{{- $style := resources.Get "css/homepage.scss" | toCSS | minify | fingerprint }}
 	<link rel="stylesheet" href="{{ $style.RelPermalink }}">
 {{ end }}
-{{- $style := resources.Get "css/mobile.scss" | toCSS | minify | fingerprint }}
+{{- $style := resources.Get "css/mobile.scss" | toCSS | minify | fingerprint -}}
 	<link rel="stylesheet" href="{{ $style.RelPermalink }}" media="(max-width:1200px)">
 {{ with .Page.Params.css }}
 	{{ range . -}}
