@@ -15,6 +15,11 @@ params:
     facebook: "RevidianAuto"
     linkedin: "RevidianMoto"
     github: "revidian-moto"
+  author:
+    email: "moto@revidian.com"
+    name: "Ricardo N Feliciano"
+
+copyright: "© 2024 Revidian Enterprises"
 
 markup:
   goldmark:
@@ -67,3 +72,7 @@ menus:
     url: "https://github.com/revidian-moto"
     pre: '<i class="fab fa-github"></i>'
     weight: 20
+  - identifier: "rss"
+    url: "/blog/index.xml"
+    pre: '<i class="fa-solid fa-rss"></i>'
+    weight: 30
