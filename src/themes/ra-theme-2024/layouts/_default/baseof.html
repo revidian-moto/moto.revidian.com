@@ -21,6 +21,7 @@
 	{{ partial "open-graph" . }}
 	{{ partial "twitter-card" . }}
 	{{ partial "verifications" . }}
+	<link rel="alternate" type="application/rss+xml" href="/blog/index.xml" title="Revidian Moto Blog">
 </head>
 <body class="{{ .Kind }}{{ with .Section }} section-{{ . }}{{ end }} type-{{ .Type }} {{ with .Layout }}layout-{{ . }}{{ end }}">
 	{{ partial "header" . -}}
