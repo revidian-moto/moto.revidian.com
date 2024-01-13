@@ -31,7 +31,7 @@ workflows:
           filters:
             branches:
               ignore: trunk
-  build-n-deploy-wf:
+  build-n-preview-wf:
     jobs:
       - sb/build:
           version: *sb-ver
@@ -40,7 +40,7 @@ workflows:
           strawberry-extra-flags: "-b https://preview.moto.revidian.com/"
           filters:
             branches:
-              only: trunk
+              ignore: /.*/
             tags:
               only: preview
       - docker/publish:
@@ -53,7 +53,7 @@ workflows:
             - sb/build
           filters:
             branches:
-              only: trunk
+              ignore: /.*/
             tags:
               only: preview
           context: docker-ctx
@@ -62,9 +62,37 @@ workflows:
             - docker/publish
           filters:
             branches:
-              only: trunk
+              ignore: /.*/
             tags:
               only: preview
+          context: k8s-ctx
+  build-n-deploy-wf:
+    jobs:
+      - sb/build:
+          version: *sb-ver
+          source: "src"
+          html-proofer: false
+          filters:
+            branches:
+              only: trunk
+      - docker/publish:
+          attach-at: "src"
+          registry: "ghcr.io"
+          image: "revidian-moto/moto.revidian.com"
+          remote-docker-version: "20.10.24"
+          tag: "$CIRCLE_SHA1,<< pipeline.number >>"
+          requires:
+            - sb/build
+          filters:
+            branches:
+              only: trunk
+          context: docker-ctx
+      - deploy:
+          requires:
+            - docker/publish
+          filters:
+            branches:
+              only: trunk
           context: k8s-ctx
 
 jobs:
