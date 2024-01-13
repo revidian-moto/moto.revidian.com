@@ -19,7 +19,6 @@
 		<meta name="description" content="{{ .Summary | plainify }}">
 	{{ end }}
 	{{ partial "open-graph" . }}
-	{{ partial "twitter-card" . }}
 	{{ partial "verifications" . }}
 </head>
 <body class="{{ .Kind }}{{ with .Section }} section-{{ . }}{{ end }} type-{{ .Type }} {{ with .Layout }}layout-{{ . }}{{ end }}">
