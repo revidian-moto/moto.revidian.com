@@ -36,6 +36,10 @@
 
 figure{
 	margin: 0;
+
+	&.inline{
+		display: inline;
+	}
 }
 figure.large{
 	max-width: 700px;
