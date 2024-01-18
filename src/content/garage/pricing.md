@@ -1,5 +1,6 @@
 ---
-title: "R/M Garage Pricing"
+title: "R// Garage Pricing"
+type: page
 ---
 
 The app is currently in private beta.
