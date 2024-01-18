@@ -1,5 +1,6 @@
 ---
-title: "R/M Garage Features"
+title: "R// Garage Features"
+type: page
 ---
 
 The Garage app is designed to make managing your motorcycles at home easier.

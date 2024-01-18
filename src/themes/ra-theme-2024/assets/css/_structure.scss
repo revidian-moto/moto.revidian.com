@@ -24,7 +24,7 @@ header a.toggle{
 
 	.site-title{
 		margin: 0;
-		margin-left: 140px;
+		margin-left: 90px;
 	}
 }
 
@@ -223,7 +223,7 @@ dl{
 
 #benefits{
 	display: flex;
-	margin: 14% auto 0;
+	margin: 10% auto 0;
 	width: 65%;
 
 	div{
@@ -232,17 +232,34 @@ dl{
 	}
 
 	h2{
-		color: #444444;
 		font-size: 1.8rem;
 
-		i{
+		i,
+		img{
 			margin-right: 20px;
+		}
+
+		img{
+			height: 20px;
 		}
 	}
 
 	p{
 		padding-top: 10px;
+		color: $ram-grey;
 	}
+}
+
+
+
+/************************************************
+ * Type: page
+ * *********************************************/
+body.type-page main{
+	margin: 50px auto 70px;
+	width: 90%;
+	min-width: 330px;
+	max-width: 1000px;
 }
 
 

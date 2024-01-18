@@ -35,9 +35,9 @@ menus:
   #- name: "Events"
   #  url: "/events/"
   #  weight: 7
-  #- name: "R// Garage"
-  #  url: "/garage/"
-  #  weight: 10
+  - name: "R// Garage"
+    url: "/garage/"
+    weight: 10
   main-right:
   - name: "Newsletter"
     pageRef: "/newsletter"
@@ -46,9 +46,6 @@ menus:
     pageRef: "/contact"
     weight: 25
   garage:
-    - name: "Home"
-      url: "/garage/"
-      weight: -1
     - name: "Features"
       url: "/garage/features"
       weight: 10
