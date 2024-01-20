@@ -7,6 +7,7 @@ orbs:
   docker: circleci/docker@2.4
   k8s: circleci/kubernetes@1.3
   sb: hubci/strawberry@0.8
+  notify: hubci/notify@0.1
 
 workflows:
   build-n-test-wf:
@@ -65,7 +66,9 @@ workflows:
               ignore: /.*/
             tags:
               only: preview
-          context: k8s-ctx
+          context:
+            - k8s-ctx
+            - notify-ctx
   build-n-deploy-wf:
     jobs:
       - sb/build:
@@ -93,7 +96,9 @@ workflows:
           filters:
             branches:
               only: trunk
-          context: k8s-ctx
+          context:
+            - k8s-ctx
+            - notify-ctx
 
 jobs:
   deploy:
@@ -110,6 +115,8 @@ jobs:
             - run:
                 name: "Deploy Preview"
                 command: kubectl set image --namespace=ram deployment/moto-website-preview site=ghcr.io/revidian-moto/moto.revidian.com:$CIRCLE_SHA1
+            - notify/notify-mattermost:
+                text: "Revidian Moto Website (preview) published. https://preview.moto.revidian.com"
       - when:
           condition:
             not:
@@ -118,3 +125,5 @@ jobs:
             - run:
                 name: "Deploy Production"
                 command: kubectl set image --namespace=ram deployment/moto-website-production site=ghcr.io/revidian-moto/moto.revidian.com:$CIRCLE_SHA1
+            - notify/notify-mattermost:
+                text: "Revidian Moto Website (production) published. https://moto.revidian.com"
