@@ -302,7 +302,7 @@ If you'd like to keep up with the progress of R// Garage or anything else happen
     </div>
         <div class="optionalParent">
             <div class="clear foot">
-                <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="btn primary" value="Subscribe">
+                <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="btn primary" value="Request">
             </div>
         </div>
     </div>
