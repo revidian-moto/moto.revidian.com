@@ -2,18 +2,18 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   namespace: ram
-  name: moto-website-production
+  name: website-moto-production
   labels:
-    app: moto-website-production
+    app: website-moto-production
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: moto-website-production
+      app: website-moto-production
   template:
     metadata:
       labels:
-        app: moto-website-production
+        app: website-moto-production
     spec:
       containers:
       - name: site
@@ -25,13 +25,13 @@ apiVersion: v1
 kind: Service
 metadata:
   namespace: ram
-  name: moto-website-production
+  name: website-moto-production
   labels:
-    app: moto-website-production
+    app: website-moto-production
 spec:
   type: ClusterIP
   selector:
-    app: moto-website-production
+    app: website-moto-production
   ports:
     - protocol: TCP
       name: http
@@ -41,11 +41,18 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   namespace: ram
-  name: moto-website-production
+  name: website-moto-production
   labels:
-    app: moto-website-production
+    app: website-moto-production
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-production"
 spec:
-  ingressClassName: caddy
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - moto.revidian.com
+    - www.moto.revidian.com
+    secretName: website-moto-production-tls
   rules:
   - host: moto.revidian.com
     http:
@@ -54,7 +61,7 @@ spec:
         path: "/"
         backend:
           service:
-            name: moto-website-production
+            name: website-moto-production
             port:
               number: 80
   - host: www.moto.revidian.com
@@ -64,6 +71,6 @@ spec:
         path: "/"
         backend:
           service:
-            name: moto-website-production
+            name: website-moto-production
             port:
               number: 80
