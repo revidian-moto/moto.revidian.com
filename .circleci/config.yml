@@ -114,7 +114,7 @@ jobs:
           steps:
             - run:
                 name: "Deploy Preview"
-                command: kubectl set image --namespace=ram deployment/moto-website-preview site=ghcr.io/revidian-moto/moto.revidian.com:$CIRCLE_SHA1
+                command: kubectl set image --namespace=ram deployment/website-moto-preview site=ghcr.io/revidian-moto/moto.revidian.com:$CIRCLE_SHA1
             - notify/notify-mattermost:
                 text: "Revidian Moto Website (preview) published. https://preview.moto.revidian.com"
       - when:
@@ -124,6 +124,6 @@ jobs:
           steps:
             - run:
                 name: "Deploy Production"
-                command: kubectl set image --namespace=ram deployment/moto-website-production site=ghcr.io/revidian-moto/moto.revidian.com:$CIRCLE_SHA1
+                command: kubectl set image --namespace=ram deployment/website-moto-production site=ghcr.io/revidian-moto/moto.revidian.com:$CIRCLE_SHA1
             - notify/notify-mattermost:
                 text: "Revidian Moto Website (production) published. https://moto.revidian.com"
