@@ -49,7 +49,7 @@ workflows:
           registry: "ghcr.io"
           image: "revidian-moto/moto.revidian.com"
           remote-docker-version: "20.10.24"
-          tag: "$CIRCLE_SHA1,<< pipeline.number >>"
+          tag: "$CIRCLE_SHA1,<< pipeline.number >>,latest"
           requires:
             - sb/build
           filters:
@@ -83,7 +83,7 @@ workflows:
           registry: "ghcr.io"
           image: "revidian-moto/moto.revidian.com"
           remote-docker-version: "20.10.24"
-          tag: "$CIRCLE_SHA1,<< pipeline.number >>"
+          tag: "$CIRCLE_SHA1,<< pipeline.number >>,latest"
           requires:
             - sb/build
           filters:
@@ -107,7 +107,7 @@ jobs:
     steps:
       - k8s/install-kubeconfig
       - k8s/install-kubectl:
-          kubectl-version: "v1.27.6"
+          kubectl-version: "v1.28.6"
       - when:
           condition:
             equal: [ "<< pipeline.git.tag >>", "preview" ]
